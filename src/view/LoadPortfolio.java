@@ -81,8 +81,45 @@ public class LoadPortfolio {
               break;
             }
           }
-
         case "3":
+          if(!ps.getFlexible()){
+            Options.NO_TRANS_INFLEXIBLE.print();
+            repeat = false;
+            break;
+          }
+          Options.STOCK_TICKER.print();
+          String name = myObj.nextLine();
+          Options.STOCK_BUY_SELL.print();
+          String buySell = myObj.nextLine();
+          String buyOrSell = null;
+          switch (buySell){
+            case "1":
+              buyOrSell = "buy";
+              break;
+            case "2":
+              buyOrSell = "sell";
+              break;
+            default:
+              Options.WRONG_OPTION.print();
+              break;
+          }
+          Options.STOCK_QUANTITY.print();
+          double quantity = myObj.nextDouble();
+
+          Options.STOCK_BUY_SELL_DATE.print();
+          String d = myObj.next();
+          LocalDate transactionDate;
+          try {
+            transactionDate = LocalDate.parse(d.replace(" ", ""));
+          } catch (Exception e) {
+            Options.INVALID_STOCK_PURCHASE_DATE.print();
+            break;
+          }
+          ReadWriteToFile rf = new ReadWriteToFile();
+          rf.buySellStocks(ps, name, buyOrSell, quantity, transactionDate);
+          repeat = false;
+          break;
+        case "4":
           repeat = false;
           break;
         case "EXIT":

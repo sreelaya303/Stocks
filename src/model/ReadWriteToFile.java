@@ -10,6 +10,7 @@ import java.io.FileWriter;
 import java.io.FilenameFilter;
 import java.io.IOException;
 import java.time.LocalDate;
+import java.util.Objects;
 
 import controler.Portfolio;
 import controler.Stock;
@@ -87,6 +88,15 @@ public class ReadWriteToFile {
       }
     }
 
+  }
+
+  public void buySellStocks(Portfolio ps, String name, String buySell, double quantity, LocalDate transactionDate){
+    if(Objects.equals(buySell, "buy")){
+
+      System.out.println("Buy" + name + quantity + ps.getPortfolioName() + transactionDate);
+    } else if (Objects.equals(buySell, "sell")) {
+      System.out.println("Sell" + name + quantity + ps.getPortfolioName() + transactionDate);
+    }
   }
 
   /**

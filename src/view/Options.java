@@ -23,6 +23,8 @@ public enum Options {
   STOCK_TICKER("Enter stock ticker: "),
   STOCK_ENTRY_PRICE("Enter the stock entry price:"),
   STOCK_PURCHASE_DATE("Enter the date the stock was purchased (YYYY-MM-DD):"),
+
+  STOCK_BUY_SELL_DATE("Enter the date this transaction has to be done on (YYYY-MM-DD):"),
   STOCK_PRICE_OPTIONS("Press (1) to add stock entry price,"
           + " Press (2) to add stock purchase date"),
   PORTFOLIO_NAME("Enter the name of your portfolio:"),
@@ -49,9 +51,15 @@ public enum Options {
 
   PORTFOLIO_OPTIONS("(1) to analyse composition, "
           + "(2) to calculate portfolio value on a given date, "
-          + "(3) to go back to main menu."),
+          + "(3) to purchase or sell stocks in this portfolio, "
+          + "(4) to go back to main menu."),
 
+  STOCK_BUY_SELL("Press (1) to buy new stocks, Press (2) to sell existing stocks"),
+
+  NO_TRANS_INFLEXIBLE("No transactions can be made on inflexible portfolios."),
   PORTFOLIO_PRICE_ON_DATE("Enter the date you want the portfolio value on (YYYY-MM-DD):");
+
+
 
   private final String message;
 

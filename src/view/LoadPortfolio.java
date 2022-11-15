@@ -33,7 +33,6 @@ public class LoadPortfolio {
         } catch (Exception e) {
           Options.INVALID_FILE_NAME.print();
           repeat = true;
-          continue;
         }
 
       }

@@ -1,7 +1,8 @@
 package model;
 
-import controler.Portfolio;
-import controler.Stock;
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
+
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
@@ -9,6 +10,10 @@ import java.io.FileWriter;
 import java.io.FilenameFilter;
 import java.io.IOException;
 import java.time.LocalDate;
+
+import controler.Portfolio;
+import controler.Stock;
+
 
 /**
  * Writes the portfolios to a file.
@@ -54,17 +59,31 @@ public class ReadWriteToFile {
     File dir = new File("./src/model/Portfolios");
     dir.mkdirs();
 
-    try {
-      file = new FileWriter("./src/model/Portfolios/" + portfolio.getPortfolioName()
-              + ".txt");
+//    try {
+//      file = new FileWriter("./src/model/Portfolios/" + portfolio.getPortfolioName()
+//              + ".txt");
+//
+//      file.write(String.valueOf(portfolio.getDateOfCreation()));
+//      file.write("\n");
+//      for (int i = 0; i < portfolio.getNumStocks(); i++) {
+//        Stock temp = Portfolio.getStock(i);
+//        file.write(temp.getStockName() + "," + temp.getStockNumber() + "," + temp.getStockPrice()
+//                + "\n");
+//      }
+//    }
+    JSONArray allStocks = new JSONArray();
+    for (int i = 0; i < portfolio.getNumStocks(); i++) {
+      JSONObject obj = new JSONObject();
+      Stock temp = Portfolio.getStock(i);
+      obj.put("Name", temp.getStockName());
+      obj.put("Number", temp.getStockNumber());
+      obj.put("Date", temp.getStockPrice());
+      allStocks.add(obj);
+    }
 
-      file.write(String.valueOf(portfolio.getDateOfCreation()));
-      file.write("\n");
-      for (int i = 0; i < portfolio.getNumStocks(); i++) {
-        Stock temp = Portfolio.getStock(i);
-        file.write(temp.getStockName() + "," + temp.getStockNumber() + "," + temp.getStockPrice()
-                + "\n");
-      }
+    try {
+      file = new FileWriter("./src/model/Portfolios/" + portfolio.getPortfolioName() + ".txt");
+      file.write(allStocks.toJSONString());
     } catch (IOException e) {
       e.printStackTrace();
     } finally {

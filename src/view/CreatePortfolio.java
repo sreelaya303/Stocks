@@ -21,7 +21,7 @@ public class CreatePortfolio {
     Options.CREAT_START.print();
     Options.TYPE_OF_PORTFOLIO.print();
     String typeOfPortfolio = myObj.nextLine();
-    switch (typeOfPortfolio){
+    switch (typeOfPortfolio) {
       case "1":
         portfolio.setFlexible(false);
         break;
@@ -61,7 +61,7 @@ public class CreatePortfolio {
           portfolio.saveToDisk();
           // clear the portfolio for next use!
           Options.CREATE_SUCCESS.print();
-          portfolio=null;
+          portfolio = null;
           repeat = false;
           break;
         case "EXIT":

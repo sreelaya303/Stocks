@@ -10,6 +10,7 @@ import java.io.FileWriter;
 import java.io.FilenameFilter;
 import java.io.IOException;
 import java.time.LocalDate;
+import java.util.List;
 import java.util.Objects;
 
 import controler.Portfolio;
@@ -90,13 +91,27 @@ public class ReadWriteToFile {
 
   }
 
-  public void buySellStocks(Portfolio ps, String name, String buySell, double quantity, LocalDate transactionDate){
-    if(Objects.equals(buySell, "buy")){
-
-      System.out.println("Buy" + name + quantity + ps.getPortfolioName() + transactionDate);
-    } else if (Objects.equals(buySell, "sell")) {
-      System.out.println("Sell" + name + quantity + ps.getPortfolioName() + transactionDate);
+  public void buySellStocks(String f, Portfolio ps, String name, String buySell, double quantity,
+                            LocalDate transactionDate){
+    List<Stock> ls = ps.getMyStocks();
+    for(int i = 0; i < ls.size(); i++) {
+      String s = ls.get(i).getStockName();
+      if (Objects.equals(s, name)) {
+        Long j = ls.get(i).getStockNumber();
+        if (Objects.equals(buySell, "buy")){
+          ls.get(i).setStockNumber((long) (j + quantity));
+        } else if (Objects.equals(buySell, "sell")) {
+          if (j < quantity) {
+            System.out.println("The quantity of stocks exceeds the existing stocks. Can't sell.");
+          }
+          else{
+            ls.get(i).setStockNumber((long) (j - quantity));
+          }
+        }
+        break;
+      }
     }
+    writeToFile(ps);
   }
 
   /**

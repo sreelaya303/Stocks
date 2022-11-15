@@ -15,6 +15,7 @@ public class LoadPortfolio {
   /**
    * Takes the input from the user.
    */
+  String file = "";
   public void userInput() {
     Scanner myObj = new Scanner(System.in);
     Portfolio ps = null;
@@ -24,7 +25,7 @@ public class LoadPortfolio {
     do {
       repeat = false;
       Options.LOAD.print();
-      String file = myObj.nextLine();
+      file = myObj.nextLine();
       ReadWriteToFile reader = new ReadWriteToFile();
       if (!reader.ifPortfolioExists(file)) {
         Options.INVALID_FILE_NAME.print();
@@ -76,7 +77,7 @@ public class LoadPortfolio {
               repeat = false;
               break;
             } catch (Exception e) {
-              repeat=true;
+              repeat = true;
               Options.COULD_NOT_GET_STOCK_PRICE_FROM_DATE.print();
               break;
             }
@@ -116,7 +117,7 @@ public class LoadPortfolio {
             break;
           }
           ReadWriteToFile rf = new ReadWriteToFile();
-          rf.buySellStocks(ps, name, buyOrSell, quantity, transactionDate);
+          rf.buySellStocks(file, ps, name, buyOrSell, quantity, transactionDate);
           repeat = false;
           break;
         case "4":

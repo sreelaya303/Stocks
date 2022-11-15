@@ -1,0 +1,1 @@
+["2022-11-15",{"Number":45,"Price":94.71,"Name":"GOOG"},{"Number":36,"Price":18.83,"Name":"T"}]

@@ -2,8 +2,8 @@ package model;
 
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
 
-import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
@@ -27,24 +27,21 @@ public class ReadWriteToFile {
    * @param filePath the path of the file.
    * @return the portfolio from the path.
    */
-  public Portfolio readFile(String filePath) {
+  public Portfolio readFile(String filePath){
     Portfolio pnew = new Portfolio();
-    BufferedReader reader;
+    JSONParser parser = new JSONParser();
     try {
-      reader = new BufferedReader(new FileReader(filePath));
-      String line = reader.readLine();
+      JSONObject port = (JSONObject) parser.parse(new FileReader(filePath));
+      JSONArray stockList = (JSONArray) port.get("Stocks");
       File f = new File(filePath);
       pnew.setName((f.getName()).replaceFirst("[.][^.]+$", ""));
-      pnew.setDateOfCreation(LocalDate.parse(line));
-      line = reader.readLine();
-      while (line != null) {
-        String[] sa = line.split("\\s*,\\s*");
-        Stock ps = new Stock(sa[0], Long.parseLong(sa[1]), Float.parseFloat(sa[2]));
+      pnew.setDateOfCreation(LocalDate.parse((String) port.get("Date")));
+      for (JSONObject obj : (Iterable<JSONObject>) stockList) {
+        Stock ps = new Stock((String) obj.get("Name"), (Long) obj.get("Number"),
+                (Double) obj.get("Price"));
         pnew.addStocks(ps);
-        line = reader.readLine();
       }
-      reader.close();
-    } catch (IOException e) {
+    } catch (Exception e) {
       e.printStackTrace();
     }
     return pnew;
@@ -58,32 +55,22 @@ public class ReadWriteToFile {
   public void writeToFile(Portfolio portfolio) {
     File dir = new File("./src/model/Portfolios");
     dir.mkdirs();
-
-//    try {
-//      file = new FileWriter("./src/model/Portfolios/" + portfolio.getPortfolioName()
-//              + ".txt");
-//
-//      file.write(String.valueOf(portfolio.getDateOfCreation()));
-//      file.write("\n");
-//      for (int i = 0; i < portfolio.getNumStocks(); i++) {
-//        Stock temp = Portfolio.getStock(i);
-//        file.write(temp.getStockName() + "," + temp.getStockNumber() + "," + temp.getStockPrice()
-//                + "\n");
-//      }
-//    }
+    JSONObject port = new JSONObject();
+    port.put("Date", String.valueOf(portfolio.getDateOfCreation()));
     JSONArray allStocks = new JSONArray();
     for (int i = 0; i < portfolio.getNumStocks(); i++) {
       JSONObject obj = new JSONObject();
       Stock temp = Portfolio.getStock(i);
       obj.put("Name", temp.getStockName());
       obj.put("Number", temp.getStockNumber());
-      obj.put("Date", temp.getStockPrice());
+      obj.put("Price", temp.getStockPrice());
       allStocks.add(obj);
     }
+    port.put("Stocks", allStocks);
 
     try {
       file = new FileWriter("./src/model/Portfolios/" + portfolio.getPortfolioName() + ".txt");
-      file.write(allStocks.toJSONString());
+      file.write(port.toJSONString());
     } catch (IOException e) {
       e.printStackTrace();
     } finally {

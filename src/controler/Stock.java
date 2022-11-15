@@ -10,8 +10,8 @@ import model.AlphaVantageApiImpl;
  */
 public class Stock {
   private String stockName;
-  private Long stockNumber;
-  private float stockPrice;
+  private long stockNumber;
+  private double stockPrice;
 
   private AlphaVantageApi api = new AlphaVantageApiImpl();
 
@@ -29,7 +29,7 @@ public class Stock {
    * @param num   is the number of said stocks.
    * @param price is the price of the stocks.
    */
-  public Stock(String name, long num, float price) {
+  public Stock(String name, long num, double price) {
     this.stockName = name;
     this.stockNumber = num;
     this.stockPrice = price;
@@ -77,7 +77,7 @@ public class Stock {
    *
    * @return price of the stock.
    */
-  public float getStockPrice() {
+  public double getStockPrice() {
     return stockPrice;
   }
 
@@ -86,7 +86,7 @@ public class Stock {
    *
    * @param stockPrice price of the stock.
    */
-  public void setStockPrice(float stockPrice) {
+  public void setStockPrice(double stockPrice) {
     this.stockPrice = stockPrice;
   }
 

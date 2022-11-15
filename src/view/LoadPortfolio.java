@@ -117,7 +117,7 @@ public class LoadPortfolio {
             break;
           }
           ReadWriteToFile rf = new ReadWriteToFile();
-          rf.buySellStocks(file, ps, name, buyOrSell, quantity, transactionDate);
+          rf.buySellStocks(ps, name, buyOrSell, quantity, transactionDate);
           repeat = false;
           break;
         case "4":

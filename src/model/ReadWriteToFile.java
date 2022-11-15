@@ -91,7 +91,7 @@ public class ReadWriteToFile {
 
   }
 
-  public void buySellStocks(String f, Portfolio ps, String name, String buySell, double quantity,
+  public void buySellStocks(Portfolio ps, String name, String buySell, double quantity,
                             LocalDate transactionDate){
     List<Stock> ls = ps.getMyStocks();
     for(int i = 0; i < ls.size(); i++) {

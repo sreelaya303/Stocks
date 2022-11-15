@@ -1,8 +1,9 @@
 package view;
 
-import controler.Portfolio;
 import java.time.LocalDate;
 import java.util.Scanner;
+
+import controler.Portfolio;
 
 /**
  * A class that creates a new portfolio.
@@ -19,6 +20,22 @@ public class CreatePortfolio {
     final Scanner myObj = new Scanner(System.in);
 
     Options.CREAT_START.print();
+    Options.TYPE_OF_PORTFOLIO.print();
+    String typeOfPortfolio = myObj.nextLine();
+    switch (typeOfPortfolio){
+      case "1":
+        portfolio.setFlexible(false);
+        break;
+      case "2":
+        portfolio.setFlexible(true);
+        break;
+      case "EXIT":
+        Options.EXIT.print();
+        break;
+      default:
+        Options.WRONG_OPTION.print();
+        Options.CREATE_LOAD.print();
+    }
 
     Options.PORTFOLIO_NAME.print();
     String name = myObj.nextLine();

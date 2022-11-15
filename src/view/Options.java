@@ -11,6 +11,9 @@ public enum Options {
   START("Welcome to stock analyzer 3000!"),
 
   CREAT_START("Let's build your new portfolio"),
+  TYPE_OF_PORTFOLIO("Press (1) to create an inflexible portfolio, "
+          + "Press (2) to create a flexible portfolio, "
+          + "Press EXIT to quit"),
   LOAD_START("Let's load your existing portfolio"),
   CREATE("Press (1) to add a new stock to your portfolio,"
           + " Press (2) to save portfolio, Press EXIT to quit"),

@@ -36,6 +36,7 @@ public class ReadWriteToFile {
       File f = new File(filePath);
       pnew.setName((f.getName()).replaceFirst("[.][^.]+$", ""));
       pnew.setDateOfCreation(LocalDate.parse((String) port.get("Date")));
+      pnew.setFlexible(f.canWrite());
       for (JSONObject obj : (Iterable<JSONObject>) stockList) {
         Stock ps = new Stock((String) obj.get("Name"), (Long) obj.get("Number"),
                 (Double) obj.get("Price"));
@@ -71,6 +72,10 @@ public class ReadWriteToFile {
     try {
       file = new FileWriter("./src/model/Portfolios/" + portfolio.getPortfolioName() + ".txt");
       file.write(port.toJSONString());
+      if(!portfolio.getFlexible()){
+        File f = new File("./src/model/Portfolios/" + portfolio.getPortfolioName() + ".txt");
+        f.setReadOnly();
+      }
     } catch (IOException e) {
       e.printStackTrace();
     } finally {

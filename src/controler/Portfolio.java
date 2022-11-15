@@ -13,6 +13,16 @@ public class Portfolio {
   private static final List<Stock> myStocks = new ArrayList<>();
   private LocalDate dateOfCreation;
 
+  public Boolean getFlexible() {
+    return isFlexible;
+  }
+
+  public void setFlexible(Boolean flexible) {
+    isFlexible = flexible;
+  }
+
+  private Boolean isFlexible;
+
   public List<Stock> getMyStocks() {
     return myStocks;
   }

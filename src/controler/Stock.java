@@ -2,8 +2,8 @@ package controler;
 
 import java.io.IOException;
 import java.time.LocalDate;
+import model.DataSource;
 import model.AlphaVantageApi;
-import model.AlphaVantageApiImpl;
 
 /**
  * A Stock class that has the name, number and price of the stock.
@@ -13,7 +13,11 @@ public class Stock {
   private Long stockNumber;
   private float stockPrice;
 
-  private AlphaVantageApi api = new AlphaVantageApiImpl();
+  // setting the data source to alphaVantageApi, this can later be changed by setSource.
+  // the user needs to be aware of the type of sources available.
+  // we can add an Enum with all available sources later.
+  private DataSource api = new DataSource(new AlphaVantageApi());
+
 
   /**
    * An empty constructor for the given class.

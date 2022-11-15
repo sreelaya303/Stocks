@@ -1,9 +1,11 @@
 package view;
 
+import java.time.LocalDate;
 import java.util.Scanner;
 
 import controler.ExamineComposition;
 import controler.Portfolio;
+import controler.PortfolioPriceOnDate;
 import model.ReadWriteToFile;
 
 /**
@@ -52,8 +54,34 @@ public class LoadPortfolio {
           repeat = false;
           break;
         case "2":
-          // calculate value on a certain date.
-          break;
+          PortfolioPriceOnDate price = new PortfolioPriceOnDate();
+          Options.PORTFOLIO_PRICE_ON_DATE.print();
+          String date = myObj.nextLine().replace(" ", "");
+          LocalDate purchaseDate;
+          try {
+            purchaseDate = LocalDate.parse(date);
+          } catch (Exception e) {
+            repeat = true;
+            Options.INVALID_STOCK_PURCHASE_DATE.print();
+            break;
+          }
+          LocalDate today = LocalDate.now();
+          if (today.compareTo(purchaseDate) <= 0) {
+            Options.INVALID_STOCK_PURCHASE_DATE.print();
+            repeat = true;
+            break;
+          } else {
+            try {
+              price.getPortfolioPriceOnDate(ps, purchaseDate);
+              repeat = false;
+              break;
+            } catch (Exception e) {
+              repeat=true;
+              Options.COULD_NOT_GET_STOCK_PRICE_FROM_DATE.print();
+              break;
+            }
+          }
+
         case "3":
           repeat = false;
           break;

@@ -32,7 +32,7 @@ public enum Options {
 
   STOCK_PRICE_NAN("The stock price needs to be a number"),
 
-  INVALID_STOCK_PURCHASE_DATE("The stock purchase date is invalid"),
+  INVALID_STOCK_PURCHASE_DATE("The date is invalid, Please try again"),
 
   COULD_NOT_GET_STOCK_PRICE_FROM_DATE("Could not get stock price from date, try again!"),
 
@@ -46,7 +46,9 @@ public enum Options {
 
   PORTFOLIO_OPTIONS("(1) to analyse composition, "
           + "(2) to calculate portfolio value on a given date, "
-          + "(3) to go back to main menu.");
+          + "(3) to go back to main menu."),
+
+  PORTFOLIO_PRICE_ON_DATE("Enter the date you want the portfolio value on (YYYY-MM-DD):");
 
   private final String message;
 

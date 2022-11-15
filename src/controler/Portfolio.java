@@ -10,8 +10,15 @@ import model.ReadWriteToFile;
  * A class that has all the model methods for portfolio.
  */
 public class Portfolio {
-  private static final List<Stock> myStocks = new ArrayList<>();
-  private LocalDate dateOfCreation;
+
+  static List<Stock> myStocks;
+  LocalDate dateOfCreation;
+
+  public Portfolio(){
+    myStocks = new ArrayList<>();
+    myStocks.clear();
+  }
+
 
   public Boolean getFlexible() {
     return isFlexible;

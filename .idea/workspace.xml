@@ -4,7 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="eabb27dd-a69f-465b-bc9f-ebbb064b9348" name="Changes" comment="" />
+    <list default="true" id="2a2f3cc9-74cf-422d-bb0c-f6667fa9254f" name="Changes" comment="fixed some bugs, implemented portfolio price on date, and finished 2.3 using strategy pattern.">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Stocks.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Stocks.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Stocks/view/CreatePortfolio.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Stocks/view/CreatePortfolio.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Stocks/view/UserInputMain.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Stocks/view/UserInputMain.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controler/Portfolio.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controler/Portfolio.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/CreatePortfolio.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/CreatePortfolio.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/UserInputMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/UserInputMain.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -17,7 +25,20 @@
     <analyzeAfterCompile>true</analyzeAfterCompile>
     <toolWindowToFront>false</toolWindowToFront>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/src/model/Portfolios/AAPL.txt" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/model/Portfolios/dsfasfads.txt" root0="FORCE_HIGHLIGHTING" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
   <component name="ProjectId" id="2HZ9TtcmvVEVkAnoy40xseO89e3" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="abbreviatePackageNames" value="true" />
     <option name="autoscrollFromSource" value="true" />
@@ -32,7 +53,7 @@
     "Downloaded.Files.Path.Enabled": "true",
     "Repository.Attach.Annotations": "false",
     "Repository.Attach.JavaDocs": "true",
-    "Repository.Attach.Sources": "true",
+    "Repository.Attach.Sources": "false",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "last_opened_file_path": "/Users/laya/Blehh/Projects/5010/Stocks",
@@ -43,10 +64,6 @@
   }
 }]]></component>
   <component name="RunManager">
-    <configuration name="&lt;template&gt;" type="TestNG" default="true" selected="false">
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
-    </configuration>
     <configuration name="Unnamed" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="Stocks" />
@@ -67,6 +84,51 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration default="true" type="TestNG">
+      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task id="LOCAL-00001" summary="fixed some bugs, implemented portfolio price on date, and finished 2.3 using strategy pattern.">
+      <created>1668537814217</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1668537814217</updated>
+    </task>
+    <task id="LOCAL-00002" summary="fixed some bugs, implemented portfolio price on date, and finished 2.3 using strategy pattern.">
+      <created>1668538289565</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1668538289565</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="fixed some bugs, implemented portfolio price on date, and finished 2.3 using strategy pattern." />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed some bugs, implemented portfolio price on date, and finished 2.3 using strategy pattern." />
+  </component>
 </project>

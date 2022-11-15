@@ -16,7 +16,6 @@ public class CreatePortfolio {
   public void userInput() {
     Portfolio portfolio = new Portfolio();
     final StockInput stockInput = new StockInput();
-    final UserInputMain userInputMain = new UserInputMain();
     final Scanner myObj = new Scanner(System.in);
 
     Options.CREAT_START.print();
@@ -34,7 +33,7 @@ public class CreatePortfolio {
         break;
       default:
         Options.WRONG_OPTION.print();
-        Options.CREATE_LOAD.print();
+        Options.TYPE_OF_PORTFOLIO.print();
     }
 
     Options.PORTFOLIO_NAME.print();
@@ -55,12 +54,14 @@ public class CreatePortfolio {
         case "2":
           if (portfolio.getNumStocks() == 0) {
             Options.EMPTY_PORTFOLIO.print();
-            Options.CREATE_LOAD.print();
+            Options.CREATE.print();
             repeat = true;
             break;
           }
           portfolio.saveToDisk();
+          // clear the portfolio for next use!
           Options.CREATE_SUCCESS.print();
+          portfolio=null;
           repeat = false;
           break;
         case "EXIT":
@@ -70,7 +71,7 @@ public class CreatePortfolio {
           break;
         default:
           Options.WRONG_OPTION.print();
-          Options.CREATE_LOAD.print();
+          Options.CREATE.print();
           repeat = true;
       }
     } while (repeat);

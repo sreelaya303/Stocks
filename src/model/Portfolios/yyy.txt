@@ -1,0 +1,1 @@
+{"Stocks":[{"Number":5,"Price":66.0,"Name":"goog"}],"Date":"2022-11-15"}

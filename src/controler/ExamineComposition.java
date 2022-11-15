@@ -23,6 +23,7 @@ public class ExamineComposition {
     getAllStocks(portfolio);
     System.out.println("Total number of stocks: " + totalStocks(portfolio));
     System.out.println("Composition of each stock:");
+    System.out.println("Cost basis: " + costBasis(portfolio));
     percentageEachStock(portfolio);
   }
 
@@ -64,6 +65,18 @@ public class ExamineComposition {
       System.out.println(lps.get(i).getStockName() + " is " + per + "% of total stocks.");
     }
 
+  }
+
+  private double costBasis(Portfolio p){
+    List<Stock> lps = p.getMyStocks();
+    int k = lps.size();
+    double cost = 0.0;
+    //TODO: Add commision
+    for (int i = 0; i < k; i++) {
+      Stock s = lps.get(i);
+      cost += s.getStockNumber() * s.getStockPrice();
+    }
+    return cost;
   }
 
 }

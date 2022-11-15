@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="Stonks">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/Stonks.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

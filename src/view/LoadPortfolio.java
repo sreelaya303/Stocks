@@ -1,9 +1,9 @@
 package view;
 
+import java.util.Scanner;
 
 import controler.ExamineComposition;
 import controler.Portfolio;
-import java.util.Scanner;
 import model.ReadWriteToFile;
 
 /**
@@ -27,7 +27,6 @@ public class LoadPortfolio {
       if (!reader.ifPortfolioExists(file)) {
         Options.INVALID_FILE_NAME.print();
         repeat = true;
-        continue;
       } else {
         try {
           ps = reader.readFile(file);

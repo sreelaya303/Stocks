@@ -57,6 +57,10 @@ public enum Options {
   STOCK_BUY_SELL("Press (1) to buy new stocks, Press (2) to sell existing stocks"),
 
   NO_TRANS_INFLEXIBLE("No transactions can be made on inflexible portfolios."),
+  SHOW_GRAPH("Press (1) to show the value of the portfolio over a certain period as a graph, "
+          + "(2) to show the value of the portfolio on a particular date"),
+  PORTFOLIO_FROM("Enter the date from which the portfolio value has to be shown (YYYY-MM-DD):"),
+  PORTFOLIO_TO("Enter the date until which the portfolio value has to be shown (YYYY-MM-DD):"),
   PORTFOLIO_PRICE_ON_DATE("Enter the date you want the portfolio value on (YYYY-MM-DD):");
 
 

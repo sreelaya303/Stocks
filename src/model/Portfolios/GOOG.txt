@@ -1,1 +1,0 @@
-[{"Number":35,"Date":98.25,"Name":"GOOG"}]

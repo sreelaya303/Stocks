@@ -1,1 +1,0 @@
-{"Stocks":[{"Number":20,"Price":94.70999908447266,"Name":"GOOG"},{"Number":20,"Price":18.829999923706055,"Name":"T"},{"Number":20,"Price":37.91999816894531,"Name":"VZ"}],"Date":"2022-11-15"}

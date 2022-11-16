@@ -73,7 +73,8 @@ public class LoadPortfolio {
             break;
           } else {
             try {
-              price.getPortfolioPriceOnDate(ps, purchaseDate);
+              float temp = price.getPortfolioPriceOnDate(ps, purchaseDate);
+              System.out.println("Price of portfolio on "+date.toString()+" was "+temp);
               repeat = false;
               break;
             } catch (Exception e) {

@@ -184,7 +184,6 @@ public class AlphaVantageApi implements ApiInterface {
     } catch (IOException e) {
       throw new RuntimeException(e);
     }
-
     return filename;
   }
 

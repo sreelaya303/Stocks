@@ -50,7 +50,7 @@ public enum Options {
   INVALID_FILE_NAME("Invalid file name"),
 
   PORTFOLIO_OPTIONS("(1) to analyse composition, "
-          + "(2) to calculate portfolio value on a given date, "
+          + "(2) to calculate portfolio value, "
           + "(3) to purchase or sell stocks in this portfolio, "
           + "(4) to go back to main menu."),
 

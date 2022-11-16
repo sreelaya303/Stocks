@@ -1,5 +1,6 @@
 package view;
 
+import java.io.IOException;
 import java.time.LocalDate;
 import java.util.Scanner;
 
@@ -17,7 +18,7 @@ public class LoadPortfolio {
    * Takes the input from the user.
    */
   String file = "";
-  public void userInput() {
+  public void userInput() throws IOException {
     Scanner myObj = new Scanner(System.in);
     Portfolio ps = null;
 

@@ -1,5 +1,6 @@
 package view;
 
+import java.io.IOException;
 import java.util.Scanner;
 
 /**
@@ -10,7 +11,7 @@ public class UserInputMain {
   /**
    * Takes user input.
    */
-  public void userInput() {
+  public void userInput() throws IOException {
 
     final Scanner myObj = new Scanner(System.in);
     Options.START.print();

@@ -6,12 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="2a2f3cc9-74cf-422d-bb0c-f6667fa9254f" name="Changes" comment="fixed some bugs, implemented portfolio price on date, and finished 2.3 using strategy pattern.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Stocks.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Stocks.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Stocks/view/CreatePortfolio.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Stocks/view/CreatePortfolio.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Stocks/view/UserInputMain.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Stocks/view/UserInputMain.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controler/Portfolio.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controler/Portfolio.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/CreatePortfolio.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/CreatePortfolio.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/UserInputMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/UserInputMain.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

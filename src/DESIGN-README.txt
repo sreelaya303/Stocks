@@ -1,3 +1,5 @@
+No major design changes were made.
+
 Most of our design follows the MVC framework and was majorly guided by it.
 
 The views folder mainly contains the logic to take user input and display the output after

@@ -19,29 +19,29 @@ import controler.StockInflexible;
 
 
 /**
- * Writes the portfolios to a file.
+ * Writes the portfolios to a file and reads the portfolio given the path of the file.
  */
 public class ReadWriteToFile {
   private static FileWriter file;
 
   /**
-   * Reads the file when path is given.
+   * Reads the file and sets it as a portfolio when path is given.
    *
    * @param filePath the path of the file.
    * @return the portfolio from the path.
    */
-  public Portfolio readFile(String filePath){
+  public Portfolio readFile(String filePath) {
     Portfolio pnew = new Portfolio();
     JSONParser parser = new JSONParser();
     try {
       JSONObject port = (JSONObject) parser.parse(new FileReader(filePath));
-      JSONArray stockList = (JSONArray) port.get("Stocks");
       File f = new File(filePath);
       pnew.setName((f.getName()).replaceFirst("[.][^.]+$", ""));
       pnew.setDateOfCreation(LocalDate.parse((String) port.get("Date")));
       pnew.setCommission(Float.parseFloat((String) port.get("Fees")));
       pnew.setFlexible((Boolean) port.get("Flexible"));
       pnew.setFlexible(f.canWrite());
+      JSONArray stockList = (JSONArray) port.get("Stocks");
       for (JSONObject obj : (Iterable<JSONObject>) stockList) {
         Stock ps = new StockInflexible((String) obj.get("Name"), (Long) obj.get("Number"),
                 (Double) obj.get("Price"));
@@ -55,7 +55,7 @@ public class ReadWriteToFile {
   }
 
   /**
-   * Writes the portfolio to a path.
+   * Writes the portfolio to a text file.
    *
    * @param portfolio takes the object Portfolio.
    */
@@ -81,7 +81,7 @@ public class ReadWriteToFile {
     try {
       file = new FileWriter("./src/model/Portfolios/" + portfolio.getPortfolioName() + ".txt");
       file.write(port.toJSONString());
-      if(!portfolio.getFlexible()){
+      if (!portfolio.getFlexible()) {
         File f = new File("./src/model/Portfolios/" + portfolio.getPortfolioName() + ".txt");
         f.setReadOnly();
       }
@@ -98,21 +98,29 @@ public class ReadWriteToFile {
 
   }
 
+  /**
+   * Enables buying and selling stocks of a flexible portfolio.
+   *
+   * @param ps              is the given portfolio from which stocks are to be bought or sold.
+   * @param name            is the name of the stock.
+   * @param buySell         specifies whether to buy or sell the stock.
+   * @param quantity        is number of the stocks to perform this transaction.
+   * @param transactionDate is the date on which this transaction has to be made.
+   */
   public void buySellStocks(Portfolio ps, String name, String buySell, double quantity,
-                            LocalDate transactionDate){
+                            LocalDate transactionDate) {
     List<Stock> ls = ps.getMyStocks();
-    for(int i = 0; i < ls.size(); i++) {
+    for (int i = 0; i < ls.size(); i++) {
       String s = ls.get(i).getStockName();
       if (Objects.equals(s, name)) {
         Long j = ls.get(i).getStockNumber();
-        if (Objects.equals(buySell, "buy")){
+        if (Objects.equals(buySell, "buy")) {
           ls.get(i).setStockNumber((long) (j + quantity));
           ls.get(i).setTransactions();
         } else if (Objects.equals(buySell, "sell")) {
           if (j < quantity) {
             System.out.println("The quantity of stocks exceeds the existing stocks. Can't sell.");
-          }
-          else{
+          } else {
             ls.get(i).setStockNumber((long) (j - quantity));
             ls.get(i).setTransactions();
           }

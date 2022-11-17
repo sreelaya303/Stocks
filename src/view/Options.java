@@ -1,7 +1,7 @@
 package view;
 
 /**
- * Enum for different options given during user input.
+ * Enum for different options given during user interaction.
  */
 public enum Options {
   WRONG_OPTION("Sorry that was a wrong input, please try again :-)"),
@@ -65,7 +65,6 @@ public enum Options {
   PORTFOLIO_PRICE_ON_DATE("Enter the date you want the portfolio value on (YYYY-MM-DD):"),
 
   GET_FEES("enter commission: ");
-
 
   private final String message;
 

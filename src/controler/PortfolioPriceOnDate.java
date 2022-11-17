@@ -17,10 +17,11 @@ public class PortfolioPriceOnDate {
 
   /**
    * Gives the value of the portfolio on a specific date.
-   * @param portfolio
-   * @param date
-   * @return
-   * @throws IOException
+   *
+   * @param portfolio whose value has to be determined.
+   * @param date      on which particular date the value has to be determined.
+   * @return the value as a float value.
+   * @throws IOException if the user input is invalid.
    */
   public float getPortfolioPriceOnDate(Portfolio portfolio, LocalDate date) throws IOException {
     float total = 0;
@@ -31,7 +32,6 @@ public class PortfolioPriceOnDate {
       LocalDate ld = getPreviousWorkingDay(date);
       total += api.getStockPrice(stock.getStockName(), ld) * stock.getStockNumber();
     }
-
     return total;
   }
 

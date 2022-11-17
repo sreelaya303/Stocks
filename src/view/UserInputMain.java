@@ -4,12 +4,14 @@ import java.io.IOException;
 import java.util.Scanner;
 
 /**
- * Main input for user.
+ * Main view for the user input.
  */
 public class UserInputMain {
 
   /**
-   * Takes user input.
+   * Shows the first set of options to the user and directs to other classes based on the input.
+   *
+   * @throws IOException if the user input is invalid.
    */
   public void userInput() throws IOException {
 
@@ -42,7 +44,8 @@ public class UserInputMain {
           Options.CREATE_LOAD.print();
           repeat = true;
       }
-    } while (repeat);
+    }
+    while (repeat);
   }
 
 }

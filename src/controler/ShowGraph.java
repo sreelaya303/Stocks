@@ -2,12 +2,20 @@ package controler;
 
 import java.io.IOException;
 import java.text.DecimalFormat;
+import java.time.DayOfWeek;
 import java.time.LocalDate;
+import java.time.temporal.ChronoField;
+import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
+import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import model.ReadWriteToFile;
+
+import static java.time.LocalDate.now;
 import static java.time.temporal.ChronoUnit.DAYS;
+import static java.time.temporal.TemporalAdjusters.lastDayOfYear;
 
 public class ShowGraph {
   Portfolio ps;
@@ -40,29 +48,25 @@ public class ShowGraph {
   }
 
   private List<LocalDate> getPeriods(LocalDate fromDate, LocalDate toDate){
-    int numLines = 0;
     long daysBetween = DAYS.between(fromDate, toDate);
-//    if (daysBetween <= 30){
-//      List<LocalDate> dates = fromDate.datesUntil(toDate).collect(Collectors.toList());
-//      System.out.println(dates.toString());
-//    }else if (daysBetween > 30 && daysBetween <= 913){
-//      List<String> months = new ArrayList<>();
-//      String fd = fromDate.toString();
-//      String td = toDate.toString();
-//      DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM", Locale.ENGLISH);
-//      YearMonth startDate = YearMonth.parse(fd.substring(0, 7), formatter);
-//      YearMonth endDate = YearMonth.parse(td.substring(0, 7), formatter);
-//      while(startDate.isBefore(endDate)) {
-//        months.add(startDate.format(formatter));
-//        startDate = startDate.plusMonths(1);
-//      }
-//      assert months != null;
-//      System.out.println(months.toString());
-
-//    }else if (daysBetween > 913){
-//      //Show each year
-//    }
-    periods = fromDate.datesUntil(toDate).collect(Collectors.toList());
+    if (daysBetween <= 30){
+      periods = fromDate.datesUntil(toDate).collect(Collectors.toList());
+    }else if (daysBetween > 30 && daysBetween <= 913){
+      List<LocalDate> allDates = fromDate.datesUntil(toDate).collect(Collectors.toList());
+      List<LocalDate> duplicatePeriods = new ArrayList<>();
+      for(LocalDate d : allDates){
+        duplicatePeriods.add(d.withDayOfMonth(d.getMonth().length(d.isLeapYear())));
+      }
+      periods = new ArrayList<>(new LinkedHashSet<>(duplicatePeriods));
+    }else if (daysBetween > 913){
+      List<LocalDate> allDates = fromDate.datesUntil(toDate).collect(Collectors.toList());
+      List<LocalDate> duplicatePeriods = new ArrayList<>();
+      for(LocalDate d : allDates){
+        duplicatePeriods.add(d.with(lastDayOfYear()));
+      }
+      periods = new ArrayList<>(new LinkedHashSet<>(duplicatePeriods));
+      System.out.println(periods.toString());
+    }
     return periods;
   }
 
@@ -73,13 +77,44 @@ public class ShowGraph {
             +this.fromDate+ " to " +this.toDate);
     int k = periods.size();
     for(int i = 0; i < k; i++){
+      int numAst = 1;
       if(prices.get(i)<0){
-        continue;
+        LocalDate temp = getPreviousWorkingDay(periods.get(i));
+        PortfolioPriceOnDate psd = new PortfolioPriceOnDate();
+        float tempPrice = psd.getPortfolioPriceOnDate(this.ps, temp);
+        if (tempPrice<0){
+          temp = getPreviousWorkingDay(now());
+          tempPrice = psd.getPortfolioPriceOnDate(this.ps, temp);
+        }
+        numAst = (int) (tempPrice/s);
+        System.out.println(temp+ ": " + "*".repeat(numAst));
       }
-      int numAst = (int) ((prices.get(i))/s);
-      System.out.println(periods.get(i) + ": " + "*".repeat(numAst));
+      else{
+        numAst = (int) ((prices.get(i))/s);
+        System.out.println(periods.get(i) + ": " + "*".repeat(numAst));
+      }
     }
     System.out.println("Scale: * = $" +s);
   }
-  
+  public static LocalDate getPreviousWorkingDay(LocalDate date) {
+    DayOfWeek dayOfWeek = DayOfWeek.of(date.get(ChronoField.DAY_OF_WEEK));
+    switch (dayOfWeek) {
+      case MONDAY:
+        return date.minus(3, ChronoUnit.DAYS);
+      case SUNDAY:
+        return date.minus(2, ChronoUnit.DAYS);
+      default:
+        return date.minus(1, ChronoUnit.DAYS);
+
+    }
+  }
+
+  public static void main(String[] args) throws IOException {
+    ReadWriteToFile rw = new ReadWriteToFile();
+    Portfolio p = rw.readFile("/Users/laya/Blehh/Projects/5010/group/Stocks/src/model/Portfolios/parijat.txt");
+    LocalDate fd = LocalDate.parse("2011-11-01");
+    LocalDate td = LocalDate.parse("2022-10-10");
+    ShowGraph sg = new ShowGraph(p, fd, td);
+    sg.showGraph();
+  }
 }

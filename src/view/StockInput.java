@@ -1,29 +1,27 @@
 package view;
 
-import controler.Stock;
 import java.time.LocalDate;
 import java.util.Scanner;
+
+import controler.Stock;
 
 /**
  * Takes input from user to show stock details.
  */
 public class StockInput {
   /**
-   * Takes input from the user.
+   * Takes input from the user and takes in the stock name, quantity
+   * and price or the date of purchase.
    */
   public Stock userInput() {
     Stock stock = new Stock();
     Scanner myObj = new Scanner(System.in);
     boolean repeat;
     do {
-      // lets hope no errors.
       repeat = false;
-
-      // read stock ticker
       Options.STOCK_TICKER.print();
       String ticker = myObj.nextLine().replace(" ", "");
 
-      // validate stock ticker
       if (!stock.verifyStockTicker(ticker)) {
         Options.INVALID_TICKER.print();
         repeat = true;
@@ -119,7 +117,8 @@ public class StockInput {
           Options.CREATE_LOAD.print();
           repeat = true;
       }
-    } while (repeat);
+    }
+    while (repeat);
     return stock;
   }
 }

@@ -2,6 +2,7 @@ package controler;
 
 import java.io.IOException;
 import java.time.LocalDate;
+
 import model.DataSource;
 import model.AlphaVantageApi;
 
@@ -13,17 +14,22 @@ public class Stock {
   private long stockNumber;
   private double stockPrice;
 
-  // setting the data source to alphaVantageApi, this can later be changed by setSource.
-  // the user needs to be aware of the type of sources available.
-  // we can add an Enum with all available sources later.
+  /**
+   * Setting the data source to alphaVantageApi, this can later be changed by setSource.
+   * the user needs to be aware of the type of sources available.
+   * we can add an Enum with all available sources later.
+   */
   private DataSource api = new DataSource(new AlphaVantageApi());
 
 
   /**
-   * An empty constructor for the given class.
+   * An empty constructor for the Stock class.
    */
   public Stock() {
-    //No initialization
+    this.stockName = "";
+    this.stockPrice = 0.0;
+    this.stockNumber = 0;
+
   }
 
   /**

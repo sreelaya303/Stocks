@@ -11,13 +11,17 @@ import controler.ShowGraph;
 import model.ReadWriteToFile;
 
 /**
- * Loads the portfolio from the file.
+ * Loads the portfolio from the file given its path.
  */
 public class LoadPortfolio {
-  /**
-   * Takes the input from the user.
-   */
   String file = "";
+
+  /**
+   * Takes the file path from the user
+   * and proceeds to give multiple options on the operations that can be performed on it.
+   *
+   * @throws IOException when user input is invalid.
+   */
   public void userInput() throws IOException {
     Scanner myObj = new Scanner(System.in);
     Portfolio ps = null;
@@ -42,7 +46,8 @@ public class LoadPortfolio {
 
       }
 
-    } while (repeat);
+    }
+    while (repeat);
 
     Options.PORTFOLIO_OPTIONS.print();
     String choice = myObj.nextLine();
@@ -64,7 +69,8 @@ public class LoadPortfolio {
               String pf = myObj.next();
               Options.PORTFOLIO_TO.print();
               String pt = myObj.next();
-              LocalDate fromDate, toDate;
+              LocalDate fromDate;
+              LocalDate toDate;
               try {
                 fromDate = LocalDate.parse(pf.replace(" ", ""));
                 toDate = LocalDate.parse(pt.replace(" ", ""));
@@ -96,7 +102,7 @@ public class LoadPortfolio {
               } else {
                 try {
                   float temp = price.getPortfolioPriceOnDate(ps, purchaseDate);
-                  System.out.println("Price of portfolio on " + date.toString() + " was " + temp);
+                  System.out.println("Price of portfolio on " + date + " was " + temp);
                   repeat = false;
                   break;
                 } catch (Exception e) {
@@ -105,59 +111,61 @@ public class LoadPortfolio {
                   break;
                 }
               }
-              }
+            default:
               break;
-            case "3":
-              if (!ps.getFlexible()) {
-                Options.NO_TRANS_INFLEXIBLE.print();
-                repeat = false;
-                break;
-              }
-              Options.STOCK_TICKER.print();
-              String name = myObj.next();
-              Options.STOCK_BUY_SELL.print();
-              String buySell = myObj.next();
-              String buyOrSell = null;
-              switch (buySell) {
-                case "1":
-                  buyOrSell = "buy";
-                  break;
-                case "2":
-                  buyOrSell = "sell";
-                  break;
-                default:
-                  Options.WRONG_OPTION.print();
-                  break;
-              }
-              Options.STOCK_QUANTITY.print();
-              double quantity = myObj.nextDouble();
-
-              Options.STOCK_BUY_SELL_DATE.print();
-              String d = myObj.next();
-              LocalDate transactionDate;
-              try {
-                transactionDate = LocalDate.parse(d.replace(" ", ""));
-              } catch (Exception e) {
-                Options.INVALID_STOCK_PURCHASE_DATE.print();
-                break;
-              }
-              ReadWriteToFile rf = new ReadWriteToFile();
-              rf.buySellStocks(ps, name, buyOrSell, quantity, transactionDate);
-              repeat = false;
+          }
+          break;
+        case "3":
+          if (!ps.getFlexible()) {
+            Options.NO_TRANS_INFLEXIBLE.print();
+            repeat = false;
+            break;
+          }
+          Options.STOCK_TICKER.print();
+          String name = myObj.next();
+          Options.STOCK_BUY_SELL.print();
+          String buySell = myObj.next();
+          String buyOrSell = null;
+          switch (buySell) {
+            case "1":
+              buyOrSell = "buy";
               break;
-            case "4":
-              repeat = false;
-              break;
-            case "EXIT":
-              // TO-DO
-              Options.EXIT.print();
+            case "2":
+              buyOrSell = "sell";
               break;
             default:
               Options.WRONG_OPTION.print();
-              Options.CREATE_LOAD.print();
+              break;
           }
+          Options.STOCK_QUANTITY.print();
+          double quantity = myObj.nextDouble();
+
+          Options.STOCK_BUY_SELL_DATE.print();
+          String d = myObj.next();
+          LocalDate transactionDate;
+          try {
+            transactionDate = LocalDate.parse(d.replace(" ", ""));
+          } catch (Exception e) {
+            Options.INVALID_STOCK_PURCHASE_DATE.print();
+            break;
+          }
+          ReadWriteToFile rf = new ReadWriteToFile();
+          rf.buySellStocks(ps, name, buyOrSell, quantity, transactionDate);
+          repeat = false;
+          break;
+        case "4":
+          repeat = false;
+          break;
+        case "EXIT":
+          // TO-DO
+          Options.EXIT.print();
+          break;
+        default:
+          Options.WRONG_OPTION.print();
+          Options.CREATE_LOAD.print();
       }
-     while (repeat);
+    }
+    while (repeat);
 
   }
 }

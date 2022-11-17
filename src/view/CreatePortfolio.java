@@ -6,12 +6,12 @@ import java.util.Scanner;
 import controler.Portfolio;
 
 /**
- * A class that creates a new portfolio.
+ * A class that creates a new portfolio with given stocks.
  */
 public class CreatePortfolio {
 
   /**
-   * Takes input from the user.
+   * Takes input from the user for creating a portfolio.
    */
   public void userInput() {
     Portfolio portfolio = new Portfolio();
@@ -74,7 +74,8 @@ public class CreatePortfolio {
           Options.CREATE.print();
           repeat = true;
       }
-    } while (repeat);
+    }
+    while (repeat);
 
   }
 }

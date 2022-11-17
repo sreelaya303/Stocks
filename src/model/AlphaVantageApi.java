@@ -17,7 +17,8 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 /**
- * A class that implements all the methods of AlphaVantageApi.
+ * A class that implements all the methods of ApiInterface
+ * i.e, the methods getStockPrice, checkTicker.
  */
 public class AlphaVantageApi implements ApiInterface {
 
@@ -32,19 +33,13 @@ public class AlphaVantageApi implements ApiInterface {
    * @throws IOException if the input is invalid.
    */
   public float getStockPrice(String ticker, LocalDate required) throws IOException {
-    // Make a cash directory if it does not exist
     makeDirectory();
-
-    // Check cash for stock price info
     String filename = checkCash(ticker);
 
-    // If stock info is not in cash then make an api request
     if (filename.equals("")) {
       filename = apiRequest(ticker);
     }
-    // validate cash
     filename = validateCash(filename, required, ticker);
-    // read data
     String res = readFile(filename, required);
     assert res != null;
     try {
@@ -70,19 +65,6 @@ public class AlphaVantageApi implements ApiInterface {
     return !Objects.equals(res, "");
   }
 
-  /**
-   * Checks if the date is valid or not.
-   *
-   * @param
-   * @return true if the date is not in the future.
-   */
-//  @Override
-//  public boolean checkDate(LocalDate required) {
-//    // can't get stock prices in the future.
-//    LocalDate today = LocalDate.now();
-//    return today.compareTo(required) >= 0;
-//  }
-
   private void makeDirectory() {
     File dir = new File("./src/model/cash");
     dir.mkdirs();
@@ -93,12 +75,10 @@ public class AlphaVantageApi implements ApiInterface {
     String[] tokens = filename.split("-", 2);
     LocalDate available = LocalDate.parse(tokens[1].replace(".txt", ""));
 
-
-    // if cash is valid for a given date
     if (available.compareTo(required) > 0) {
       return filename;
     }
-    // invalidate cash
+
     File myObj = new File(filename);
     if (!myObj.delete()) {
       System.out.println("Failed to invalidate cash");
@@ -124,7 +104,6 @@ public class AlphaVantageApi implements ApiInterface {
     FileInputStream fis = new FileInputStream(filename);
     FileChannel fc = fis.getChannel();
 
-    // Create a read-only CharBuffer on the file
     ByteBuffer bbuf = fc.map(FileChannel.MapMode.READ_ONLY, 0, (int) fc.size());
     return StandardCharsets.ISO_8859_1.newDecoder().decode(bbuf);
   }
@@ -134,8 +113,8 @@ public class AlphaVantageApi implements ApiInterface {
 
     File f = new File("./src/model/cash/");
 
-    File[] matchingFiles = f.listFiles((dir, name)
-            -> name.startsWith(ticker) && name.endsWith("txt"));
+    File[] matchingFiles = f.listFiles((dir, name) -> name.startsWith(ticker)
+            && name.endsWith("txt"));
     assert matchingFiles != null;
     if (matchingFiles.length == 0) {
       return "";
@@ -150,10 +129,13 @@ public class AlphaVantageApi implements ApiInterface {
               + ".co/query?function=TIME_SERIES_DAILY"
               + "&outputsize=full"
               + "&symbol"
-              + "=" + stockSymbol + "&apikey=" + apiKey + "&datatype=csv");
+              + "="
+              + stockSymbol
+              + "&apikey="
+              + apiKey
+              + "&datatype=csv");
     } catch (MalformedURLException e) {
-      throw new RuntimeException("the alphavantage API has either changed or "
-              + "no longer works");
+      throw new RuntimeException("the alphavantage API has either changed or " + "no longer works");
     }
 
     InputStream in = null;
@@ -170,7 +152,7 @@ public class AlphaVantageApi implements ApiInterface {
       throw new IllegalArgumentException("No price data found for " + stockSymbol);
     }
 
-    // invalid ticker
+
     if (output.toString().contains("Error Message")) {
       return "";
     }
@@ -186,7 +168,5 @@ public class AlphaVantageApi implements ApiInterface {
     }
     return filename;
   }
-
-
 }
 

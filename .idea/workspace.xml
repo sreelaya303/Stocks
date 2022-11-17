@@ -5,9 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2a2f3cc9-74cf-422d-bb0c-f6667fa9254f" name="Changes" comment="merge">
-      <change beforePath="$PROJECT_DIR$/src/model/Portfolios/parijat.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/cash/aapl-2022-11-16.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/cash/v-2022-11-16.txt" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Stocks/controler/CostBasis.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Stocks/controler/StockAbstract.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Stocks/controler/StockFlexible.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Stocks/controler/StockInflexible.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Stocks/controler/Transactions.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Stocks/model/ReadWriteToFileFlexible$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Stocks/model/ReadWriteToFileFlexible.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Stocks/model/ReadWriteToFileInflexible$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Stocks/model/ReadWriteToFileInflexible.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Stocks/view/FlexiblePortfolio.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Stocks/view/InflexiblePortfolio.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Stocks/model/cash/aapl-2022-11-16.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Stocks/model/cash/aapl-2022-11-16.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Stocks/model/cash/v-2022-11-16.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Stocks/model/cash/v-2022-11-16.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -130,7 +140,21 @@
       <option name="project" value="LOCAL" />
       <updated>1668559737260</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="merge">
+      <created>1668645406515</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1668645406515</updated>
+    </task>
+    <task id="LOCAL-00005" summary="merge">
+      <created>1668645542415</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1668645542415</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

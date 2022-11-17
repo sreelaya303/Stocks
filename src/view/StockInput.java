@@ -1,8 +1,10 @@
 package view;
 
-import controler.Stock;
 import java.time.LocalDate;
 import java.util.Scanner;
+
+import controler.Stock;
+import controler.StockInflexible;
 
 /**
  * Takes input from user to show stock details.
@@ -12,7 +14,7 @@ public class StockInput {
    * Takes input from the user.
    */
   public Stock userInput() {
-    Stock stock = new Stock();
+    Stock stock = new StockInflexible();
     Scanner myObj = new Scanner(System.in);
     boolean repeat;
     do {
@@ -71,7 +73,7 @@ public class StockInput {
             repeat = true;
             break;
           } else {
-            stock.setStockPrice(price);
+            ((StockInflexible) stock).setStockPrice(price);
           }
           break;
 
@@ -94,7 +96,7 @@ public class StockInput {
             break;
           } else {
             try {
-              price2 = stock.getStockPriceOnDate(purchaseDate);
+              price2 = ((StockInflexible) stock).getStockPriceOnDate(purchaseDate);
             } catch (Exception e) {
               Options.COULD_NOT_GET_STOCK_PRICE_FROM_DATE.print();
               repeat = true;
@@ -105,7 +107,7 @@ public class StockInput {
               repeat = true;
               break;
             } else {
-              stock.setStockPrice(price2);
+              ((StockInflexible) stock).setStockPrice(price2);
             }
 
           }

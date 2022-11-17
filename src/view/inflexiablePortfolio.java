@@ -1,11 +1,11 @@
 package view;
 
-import controler.Portfolio;
 import java.time.LocalDate;
 import java.util.Scanner;
 
-public class InflexiblePortfolio {
+import controler.Portfolio;
 
+public class inflexiablePortfolio {
 
   public void userInput(Portfolio portfolio) {
     Options.PORTFOLIO_NAME.print();
@@ -14,10 +14,11 @@ public class InflexiblePortfolio {
     String name = myObj.nextLine();
     portfolio.setName(name);
     portfolio.setDateOfCreation(LocalDate.now());
+
     if (portfolio.getFlexible()) {
       Options.GET_FEES.print();
       String cost = myObj.nextLine();
-      portfolio.setComm(Float.parseFloat(cost));
+      portfolio.setCommission(Float.parseFloat(cost));
     }
 
     boolean repeat;

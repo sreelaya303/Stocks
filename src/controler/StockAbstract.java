@@ -7,11 +7,10 @@ public abstract class StockAbstract implements Stock {
   protected String stockName;
   protected long stockNumber;
   protected double stockPrice;
-  protected int transactions = 0;
+  protected int transactions = 1;
   protected DataSource api = new DataSource(new AlphaVantageApi());
 
-  public StockAbstract() {
-  }
+
 
   public boolean verifyStockTicker(String ticker) {
     return this.api.checkTicker(ticker);

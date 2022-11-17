@@ -52,7 +52,8 @@ public enum Options {
   PORTFOLIO_OPTIONS("(1) to analyse composition, "
           + "(2) to calculate portfolio value, "
           + "(3) to purchase or sell stocks in this portfolio, "
-          + "(4) to go back to main menu."),
+          + "(4) to get cost basis"
+          + "(5) to go back to main menu."),
 
   STOCK_BUY_SELL("Press (1) to buy new stocks, Press (2) to sell existing stocks"),
 
@@ -61,8 +62,9 @@ public enum Options {
           + "(2) to show the value of the portfolio on a particular date"),
   PORTFOLIO_FROM("Enter the date from which the portfolio value has to be shown (YYYY-MM-DD):"),
   PORTFOLIO_TO("Enter the date until which the portfolio value has to be shown (YYYY-MM-DD):"),
-  PORTFOLIO_PRICE_ON_DATE("Enter the date you want the portfolio value on (YYYY-MM-DD):");
+  PORTFOLIO_PRICE_ON_DATE("Enter the date you want the portfolio value on (YYYY-MM-DD):"),
 
+  GET_FEES("enter commission: ");
 
 
   private final String message;

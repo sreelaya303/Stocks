@@ -15,6 +15,7 @@ import java.util.Objects;
 
 import controler.Portfolio;
 import controler.Stock;
+import controler.StockInflexible;
 
 
 /**
@@ -38,10 +39,13 @@ public class ReadWriteToFile {
       File f = new File(filePath);
       pnew.setName((f.getName()).replaceFirst("[.][^.]+$", ""));
       pnew.setDateOfCreation(LocalDate.parse((String) port.get("Date")));
+      pnew.setCommission(Float.parseFloat((String) port.get("Fees")));
+      pnew.setFlexible((Boolean) port.get("Flexible"));
       pnew.setFlexible(f.canWrite());
       for (JSONObject obj : (Iterable<JSONObject>) stockList) {
-        Stock ps = new Stock((String) obj.get("Name"), (Long) obj.get("Number"),
+        Stock ps = new StockInflexible((String) obj.get("Name"), (Long) obj.get("Number"),
                 (Double) obj.get("Price"));
+        ps.setTransactions((Integer) obj.get("Trans"));
         pnew.addStocks(ps);
       }
     } catch (Exception e) {
@@ -60,6 +64,8 @@ public class ReadWriteToFile {
     dir.mkdirs();
     JSONObject port = new JSONObject();
     port.put("Date", String.valueOf(portfolio.getDateOfCreation()));
+    port.put("Flexible", portfolio.getFlexible());
+    port.put("Fees", portfolio.getCommission());
     JSONArray allStocks = new JSONArray();
     for (int i = 0; i < portfolio.getNumStocks(); i++) {
       JSONObject obj = new JSONObject();
@@ -67,6 +73,7 @@ public class ReadWriteToFile {
       obj.put("Name", temp.getStockName());
       obj.put("Number", temp.getStockNumber());
       obj.put("Price", temp.getStockPrice());
+      obj.put("Trans", temp.getTransactions());
       allStocks.add(obj);
     }
     port.put("Stocks", allStocks);
@@ -100,12 +107,14 @@ public class ReadWriteToFile {
         Long j = ls.get(i).getStockNumber();
         if (Objects.equals(buySell, "buy")){
           ls.get(i).setStockNumber((long) (j + quantity));
+          ls.get(i).setTransactions();
         } else if (Objects.equals(buySell, "sell")) {
           if (j < quantity) {
             System.out.println("The quantity of stocks exceeds the existing stocks. Can't sell.");
           }
           else{
             ls.get(i).setStockNumber((long) (j - quantity));
+            ls.get(i).setTransactions();
           }
         }
         break;

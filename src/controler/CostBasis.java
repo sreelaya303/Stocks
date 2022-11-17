@@ -5,7 +5,15 @@ public class CostBasis {
   }
 
   public float getCostBasis(Portfolio portfolio) {
-    System.out.println(portfolio.getCommission());
-    return 0.0F;
+    float total = 0;
+    int numStocks = portfolio.getNumStocks();
+
+    for (int i = 0; i < numStocks; i++) {
+      Stock stock = Portfolio.getStock(i);
+
+      total += (stock.getStockNumber()*stock.getStockPrice())
+              -(stock.getTransactions()-portfolio.getCommission());
+    }
+    return total;
   }
 }

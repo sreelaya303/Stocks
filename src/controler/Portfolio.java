@@ -17,6 +17,8 @@ public class Portfolio {
   private Boolean isFlexible;
   private String name;
 
+  private float comission;
+
   /**
    * This construnctor creates a new array list for stocks.
    */
@@ -126,6 +128,14 @@ public class Portfolio {
   public void saveToDisk() {
     ReadWriteToFile fs = new ReadWriteToFile();
     fs.writeToFile(this);
+  }
+
+  public float getCommission(){
+    return this.comission;
+  }
+
+  public void setCommission(float temp){
+    this.comission = comission;
   }
 
 }

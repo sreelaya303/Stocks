@@ -1,117 +1,23 @@
 package controler;
 
-import java.io.IOException;
-import java.time.LocalDate;
-import model.DataSource;
-import model.AlphaVantageApi;
-
-/**
- * A Stock class that has the name, number and price of the stock.
- */
-public class Stock {
-  private String stockName;
-  private long stockNumber;
-  private double stockPrice;
-
-  // setting the data source to alphaVantageApi, this can later be changed by setSource.
-  // the user needs to be aware of the type of sources available.
-  // we can add an Enum with all available sources later.
-  private DataSource api = new DataSource(new AlphaVantageApi());
+public interface Stock {
+  public boolean verifyStockTicker(String ticker);
 
 
-  /**
-   * An empty constructor for the given class.
-   */
-  public Stock() {
-    //No initialization
-  }
-
-  /**
-   * A constructor for the class Stock.
-   *
-   * @param name  of the stock.
-   * @param num   is the number of said stocks.
-   * @param price is the price of the stocks.
-   */
-  public Stock(String name, long num, double price) {
-    this.stockName = name;
-    this.stockNumber = num;
-    this.stockPrice = price;
-  }
+  public String getStockName();
 
 
-  /**
-   * Gets the name of the stock.
-   *
-   * @return name of the stock.
-   */
-  public String getStockName() {
-    return stockName;
-  }
+  public void setStockName(String stockName);
 
-  /**
-   * Sets the name of the stock.
-   *
-   * @param stockName is the name of the stock.
-   */
-  public void setStockName(String stockName) {
-    this.stockName = stockName;
-  }
+  public Long getStockNumber();
 
-  /**
-   * Gets the number of stocks.
-   *
-   * @return number of stocks.
-   */
-  public Long getStockNumber() {
-    return stockNumber;
-  }
+  public double getStockPrice();
 
-  /**
-   * Sets the number of the stocks.
-   *
-   * @param stockNumber number of the stocks.
-   */
-  public void setStockNumber(Long stockNumber) {
-    this.stockNumber = stockNumber;
-  }
+  public int getTransactions();
 
-  /**
-   * Gets the price of the stock.
-   *
-   * @return price of the stock.
-   */
-  public double getStockPrice() {
-    return stockPrice;
-  }
+  public void setTransactions();
 
-  /**
-   * Set the price of the stock.
-   *
-   * @param stockPrice price of the stock.
-   */
-  public void setStockPrice(double stockPrice) {
-    this.stockPrice = stockPrice;
-  }
+  public void setTransactions(int i);
 
-  /**
-   * Check whether a stock exists.
-   *
-   * @param ticker name of the stock.
-   * @return true if it is valid.
-   */
-  public boolean verifyStockTicker(String ticker) {
-    return api.checkTicker(ticker);
-  }
-
-  /**
-   * Gets the stock price on that particular date.
-   *
-   * @param date specified by the user.
-   * @return the price of the stock on that day.
-   * @throws IOException if the date is invalid.
-   */
-  public float getStockPriceOnDate(LocalDate date) throws IOException {
-    return api.getStockPrice(this.stockName, date);
-  }
+  public void setStockNumber(Long stockNumber);
 }

@@ -4,20 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2a2f3cc9-74cf-422d-bb0c-f6667fa9254f" name="Changes" comment="merge">
-      <change afterPath="$PROJECT_DIR$/out/production/Stocks/controler/CostBasis.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Stocks/controler/StockAbstract.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Stocks/controler/StockFlexible.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Stocks/controler/StockInflexible.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Stocks/controler/Transactions.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Stocks/model/ReadWriteToFileFlexible$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Stocks/model/ReadWriteToFileFlexible.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Stocks/model/ReadWriteToFileInflexible$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Stocks/model/ReadWriteToFileInflexible.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Stocks/view/FlexiblePortfolio.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Stocks/view/InflexiblePortfolio.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Stocks/model/cash/aapl-2022-11-16.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Stocks/model/cash/aapl-2022-11-16.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Stocks/model/cash/v-2022-11-16.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Stocks/model/cash/v-2022-11-16.txt" afterDir="false" />
+    <list default="true" id="8321fd9a-0419-4b5d-93d3-0592f50b3640" name="Changes" comment="1">
+      <change afterPath="$PROJECT_DIR$/src/view/inflexiablePortfolio.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controler/CostBasis.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controler/CostBasis.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controler/Portfolio.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controler/Portfolio.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controler/Stock.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controler/Stock.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controler/StockAbstract.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controler/StockAbstract.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/ReadWriteToFile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/ReadWriteToFile.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/CreatePortfolio.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/CreatePortfolio.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/FlexiblePortfolio.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/InflexiblePortfoilio.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/Options.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/Options.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/StockInput.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/StockInput.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,6 +30,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>

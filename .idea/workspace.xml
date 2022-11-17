@@ -10,71 +10,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2a2f3cc9-74cf-422d-bb0c-f6667fa9254f" name="Changes" comment="merge">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Stocks/controler/PortfolioPriceOnDate.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Stocks/controler/PortfolioPriceOnDate.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Stocks/model/Portfolios/1.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Stocks/model/Portfolios/A.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Stocks/model/Portfolios/AAPL.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Stocks/model/Portfolios/CW.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Stocks/model/Portfolios/F.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Stocks/model/Portfolios/F2.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Stocks/model/Portfolios/GOOG.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Stocks/model/Portfolios/Gooooo.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Stocks/model/Portfolios/Haha.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Stocks/model/Portfolios/Sreelaya.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Stocks/model/Portfolios/Test.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Stocks/model/Portfolios/VZ.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Stocks/model/Portfolios/VZ2.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Stocks/model/Portfolios/bleh.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Stocks/model/Portfolios/codewalk.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Stocks/model/Portfolios/dsfadfsfds.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Stocks/model/Portfolios/dsfasfads.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Stocks/model/Portfolios/fadfads.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Stocks/model/Portfolios/jt.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Stocks/model/Portfolios/jt2.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Stocks/model/Portfolios/jt3.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Stocks/model/Portfolios/jt4.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Stocks/model/Portfolios/p.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Stocks/model/Portfolios/p2.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Stocks/model/Portfolios/parijat.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Stocks/model/Portfolios/rqewr.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Stocks/model/Portfolios/rrr.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Stocks/model/Portfolios/ttt.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Stocks/model/Portfolios/yyy.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Stocks/model/ReadWriteToFile.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Stocks/model/ReadWriteToFile.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Stocks/view/LoadPortfolio.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Stocks/view/LoadPortfolio.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controler/PortfolioPriceOnDate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controler/PortfolioPriceOnDate.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/Portfolios/1.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/Portfolios/A.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/Portfolios/AAPL.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/Portfolios/CW.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/Portfolios/F.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/Portfolios/F2.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/Portfolios/GOOG.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/Portfolios/Gooooo.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/Portfolios/Haha.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/Portfolios/Sreelaya.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/Portfolios/Test.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/Portfolios/VZ.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/Portfolios/VZ2.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/Portfolios/bleh.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/Portfolios/codewalk.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/Portfolios/dsfadfsfds.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/Portfolios/dsfasfads.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/Portfolios/fadfads.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/Portfolios/jt.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/Portfolios/jt2.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/Portfolios/jt3.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/Portfolios/jt4.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/Portfolios/p.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/Portfolios/p2.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/Portfolios/parijat.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/Portfolios/rqewr.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/Portfolios/rrr.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/Portfolios/ttt.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/Portfolios/yyy.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/cash/aapl-2022-11-15.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/LoadPortfolio.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/LoadPortfolio.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Stocks/controler/CostBasis.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Stocks/controler/StockAbstract.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Stocks/controler/StockFlexible.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Stocks/controler/StockInflexible.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Stocks/controler/Transactions.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Stocks/model/ReadWriteToFileFlexible$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Stocks/model/ReadWriteToFileFlexible.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Stocks/model/ReadWriteToFileInflexible$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Stocks/model/ReadWriteToFileInflexible.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Stocks/view/FlexiblePortfolio.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Stocks/view/InflexiblePortfolio.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Stocks/model/cash/aapl-2022-11-16.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Stocks/model/cash/aapl-2022-11-16.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Stocks/model/cash/v-2022-11-16.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Stocks/model/cash/v-2022-11-16.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -100,10 +48,12 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/src/controler/ExamineComposition.java" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/controler/Portfolio.java" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/controler/PortfolioPriceOnDate.java" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/model/ReadWriteToFile.java" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/view/CreatePortfolio.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/view/LoadPortfolio.java" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/view/StockInput.java" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/view/UserInputMain.java" root0="FORCE_HIGHLIGHTING" />
   </component>
@@ -153,15 +103,6 @@
     </key>
   </component>
   <component name="RunManager">
-    <configuration default="true" type="TestNG">
-      <option name="TEST_OBJECT" value="CLASS" />
-      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="Unnamed" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="Stocks" />
@@ -178,6 +119,15 @@
     <configuration default="true" type="JUnit" factoryName="JUnit">
       <option name="TEST_OBJECT" value="class" />
       <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="TestNG">
+      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <properties />
+      <listeners />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -206,7 +156,21 @@
       <option name="project" value="LOCAL" />
       <updated>1668559737260</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="merge">
+      <created>1668645406515</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1668645406515</updated>
+    </task>
+    <task id="LOCAL-00005" summary="merge">
+      <created>1668645542415</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1668645542415</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

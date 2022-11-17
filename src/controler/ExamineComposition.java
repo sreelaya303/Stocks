@@ -5,7 +5,8 @@ import java.nio.file.Paths;
 import java.util.List;
 
 /**
- * This class gives information about the given portfolio.
+ * This class gives the composition of the portfolio like number of stocks,
+ * total value of the stocks, etc.
  */
 public class ExamineComposition {
 
@@ -67,7 +68,7 @@ public class ExamineComposition {
 
   }
 
-  private double costBasis(Portfolio p){
+  private double costBasis(Portfolio p) {
     List<Stock> lps = p.getMyStocks();
     int k = lps.size();
     double cost = 0.0;

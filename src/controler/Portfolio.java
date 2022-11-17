@@ -7,29 +7,47 @@ import java.util.List;
 import model.ReadWriteToFile;
 
 /**
- * A class that has all the model methods for portfolio.
+ * A class that has all the model methods to get the number and other details of the stocks;
+ * and other details about the portfolio like if it's flexible or not.
  */
 public class Portfolio {
 
   static List<Stock> myStocks;
   LocalDate dateOfCreation;
+  private Boolean isFlexible;
+  private String name;
 
-  public Portfolio(){
+  /**
+   * This construnctor creates a new array list for stocks.
+   */
+  public Portfolio() {
     myStocks = new ArrayList<>();
     myStocks.clear();
   }
 
-
+  /**
+   * Checks if the given portfolio is flexible or not.
+   *
+   * @return true if it is flexible or false.
+   */
   public Boolean getFlexible() {
     return isFlexible;
   }
 
+  /**
+   * Sets the flexibility condition of the portfolio.
+   *
+   * @param flexible if true makes the portfolio flexible; if false makes it inflexible.
+   */
   public void setFlexible(Boolean flexible) {
     isFlexible = flexible;
   }
 
-  private Boolean isFlexible;
-
+  /**
+   * Gives all the stocks in the portfolio and their details.
+   *
+   * @return a list containing the details of each stock in the portfolio.
+   */
   public List<Stock> getMyStocks() {
     return myStocks;
   }
@@ -57,7 +75,6 @@ public class Portfolio {
     return myStocks.size();
   }
 
-
   /**
    * Gets the date the portfolio was created.
    *
@@ -66,8 +83,6 @@ public class Portfolio {
   public LocalDate getDateOfCreation() {
     return dateOfCreation;
   }
-
-  private String name;
 
   /**
    * Sets the dateOfCreation for the portfolio.

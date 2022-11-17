@@ -28,6 +28,32 @@ public class ShowGraph {
     this.toDate = toDate;
 
   }
+  public void showGraph() throws IOException {
+    getPeriods(this.fromDate, this.toDate);
+    int s = calculateScale(this.ps);
+    System.out.println("Performance of portfolio "+this.ps.getPortfolioName()+" from "
+            +this.fromDate+ " to " +this.toDate);
+    int k = periods.size();
+    for(int i = 0; i < k; i++){
+      int numAst = 1;
+      if(prices.get(i)<0){
+        LocalDate temp = getPreviousWorkingDay(periods.get(i));
+        PortfolioPriceOnDate psd = new PortfolioPriceOnDate();
+        float tempPrice = psd.getPortfolioPriceOnDate(this.ps, temp);
+        if (tempPrice<0){
+          temp = getPreviousWorkingDay(now());
+          tempPrice = psd.getPortfolioPriceOnDate(this.ps, temp);
+        }
+        numAst = (int) (tempPrice/s);
+        System.out.println(temp+ ": " + "*".repeat(numAst));
+      }
+      else{
+        numAst = (int) ((prices.get(i))/s);
+        System.out.println(periods.get(i) + ": " + "*".repeat(numAst));
+      }
+    }
+    System.out.println("Scale: * = $" +s);
+  }
 
   private int calculateScale(Portfolio ps) throws IOException {
     PortfolioPriceOnDate ppd = new PortfolioPriceOnDate();
@@ -66,34 +92,7 @@ public class ShowGraph {
     }
     return periods;
   }
-
-  public void showGraph() throws IOException {
-    getPeriods(this.fromDate, this.toDate);
-    int s = calculateScale(this.ps);
-    System.out.println("Performance of portfolio "+this.ps.getPortfolioName()+" from "
-            +this.fromDate+ " to " +this.toDate);
-    int k = periods.size();
-    for(int i = 0; i < k; i++){
-      int numAst = 1;
-      if(prices.get(i)<0){
-        LocalDate temp = getPreviousWorkingDay(periods.get(i));
-        PortfolioPriceOnDate psd = new PortfolioPriceOnDate();
-        float tempPrice = psd.getPortfolioPriceOnDate(this.ps, temp);
-        if (tempPrice<0){
-          temp = getPreviousWorkingDay(now());
-          tempPrice = psd.getPortfolioPriceOnDate(this.ps, temp);
-        }
-        numAst = (int) (tempPrice/s);
-        System.out.println(temp+ ": " + "*".repeat(numAst));
-      }
-      else{
-        numAst = (int) ((prices.get(i))/s);
-        System.out.println(periods.get(i) + ": " + "*".repeat(numAst));
-      }
-    }
-    System.out.println("Scale: * = $" +s);
-  }
-  public static LocalDate getPreviousWorkingDay(LocalDate date) {
+  private static LocalDate getPreviousWorkingDay(LocalDate date) {
     DayOfWeek dayOfWeek = DayOfWeek.of(date.get(ChronoField.DAY_OF_WEEK));
     switch (dayOfWeek) {
       case MONDAY:

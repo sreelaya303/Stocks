@@ -5,18 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8321fd9a-0419-4b5d-93d3-0592f50b3640" name="Changes" comment="1">
-      <change afterPath="$PROJECT_DIR$/src/view/inflexiablePortfolio.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/class_diagram.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controler/CostBasis.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controler/CostBasis.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controler/Portfolio.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controler/Portfolio.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controler/Stock.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controler/Stock.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controler/StockAbstract.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controler/StockAbstract.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/ReadWriteToFile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/ReadWriteToFile.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/CreatePortfolio.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/CreatePortfolio.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/FlexiblePortfolio.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/InflexiblePortfoilio.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/Options.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/Options.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/StockInput.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/StockInput.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/img.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Stocks/DESIGN-README.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Stocks/DESIGN-README.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Stocks/img.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Stocks/view/LoadPortfolio.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Stocks/view/LoadPortfolio.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Stocks/view/Options.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Stocks/view/Options.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DESIGN-README.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/DESIGN-README.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/img.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,8 +27,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -86,7 +84,12 @@
     &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
   }
 }</component>
-  <component name="RunManager">
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/res" />
+    </key>
+  </component>
+  <component name="RunManager" selected="JUnit.Main">
     <configuration name="Unnamed" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="Stocks" />
@@ -100,8 +103,40 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Main" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Stocks" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="Main" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Main.testApi" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Stocks" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="Main" />
+      <option name="METHOD_NAME" value="testApi" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration default="true" type="JUnit" factoryName="JUnit">
       <option name="TEST_OBJECT" value="class" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="tests.testApi" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Stocks" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="tests" />
+      <option name="METHOD_NAME" value="testApi" />
+      <option name="TEST_OBJECT" value="method" />
       <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -116,6 +151,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.Main" />
+        <item itemvalue="JUnit.tests.testApi" />
+        <item itemvalue="JUnit.Main.testApi" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">

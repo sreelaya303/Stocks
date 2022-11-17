@@ -11,8 +11,6 @@ import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.stream.Collectors;
 
-import model.ReadWriteToFile;
-
 import static java.time.LocalDate.now;
 import static java.time.temporal.ChronoUnit.DAYS;
 import static java.time.temporal.TemporalAdjusters.lastDayOfYear;
@@ -65,7 +63,6 @@ public class ShowGraph {
         duplicatePeriods.add(d.with(lastDayOfYear()));
       }
       periods = new ArrayList<>(new LinkedHashSet<>(duplicatePeriods));
-      System.out.println(periods.toString());
     }
     return periods;
   }
@@ -107,14 +104,5 @@ public class ShowGraph {
         return date.minus(1, ChronoUnit.DAYS);
 
     }
-  }
-
-  public static void main(String[] args) throws IOException {
-    ReadWriteToFile rw = new ReadWriteToFile();
-    Portfolio p = rw.readFile("/Users/laya/Blehh/Projects/5010/group/Stocks/src/model/Portfolios/parijat.txt");
-    LocalDate fd = LocalDate.parse("2011-11-01");
-    LocalDate td = LocalDate.parse("2022-10-10");
-    ShowGraph sg = new ShowGraph(p, fd, td);
-    sg.showGraph();
   }
 }

@@ -4,24 +4,28 @@ import java.time.LocalDate;
 import java.util.Scanner;
 
 import controler.Stock;
+import controler.StockInflexible;
 
 /**
  * Takes input from user to show stock details.
  */
 public class StockInput {
   /**
-   * Takes input from the user and takes in the stock name, quantity
-   * and price or the date of purchase.
+   * Takes input from the user.
    */
   public Stock userInput() {
-    Stock stock = new Stock();
+    Stock stock = new StockInflexible();
     Scanner myObj = new Scanner(System.in);
     boolean repeat;
     do {
+      // lets hope no errors.
       repeat = false;
+
+      // read stock ticker
       Options.STOCK_TICKER.print();
       String ticker = myObj.nextLine().replace(" ", "");
 
+      // validate stock ticker
       if (!stock.verifyStockTicker(ticker)) {
         Options.INVALID_TICKER.print();
         repeat = true;
@@ -69,7 +73,7 @@ public class StockInput {
             repeat = true;
             break;
           } else {
-            stock.setStockPrice(price);
+            ((StockInflexible) stock).setStockPrice(price);
           }
           break;
 
@@ -92,7 +96,7 @@ public class StockInput {
             break;
           } else {
             try {
-              price2 = stock.getStockPriceOnDate(purchaseDate);
+              price2 = ((StockInflexible) stock).getStockPriceOnDate(purchaseDate);
             } catch (Exception e) {
               Options.COULD_NOT_GET_STOCK_PRICE_FROM_DATE.print();
               repeat = true;
@@ -103,7 +107,7 @@ public class StockInput {
               repeat = true;
               break;
             } else {
-              stock.setStockPrice(price2);
+              ((StockInflexible) stock).setStockPrice(price2);
             }
 
           }
@@ -117,8 +121,7 @@ public class StockInput {
           Options.CREATE_LOAD.print();
           repeat = true;
       }
-    }
-    while (repeat);
+    } while (repeat);
     return stock;
   }
 }

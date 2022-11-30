@@ -1,0 +1,1 @@
+{"Flexible":true,"Stocks":[{"Number":100,"Price":44.0,"Trans":1,"Name":"aapl"}],"Fees":0.0,"Date":"2022-11-16"}

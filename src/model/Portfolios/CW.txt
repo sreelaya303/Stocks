@@ -1,0 +1,1 @@
+{"Stocks":[{"Transactions":1,"Number":10,"Price":38.54999923706055,"Name":"VZ"},{"Transactions":1,"Number":10,"Price":24.989999771118164,"Name":"T"}],"Fees":"0.0","Date":"2022-11-28"}

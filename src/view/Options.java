@@ -52,7 +52,8 @@ public enum Options {
   PORTFOLIO_OPTIONS("(1) to analyse composition, "
           + "(2) to calculate portfolio value, "
           + "(3) to purchase or sell stocks in this portfolio, "
-          + "(4) to go back to main menu."),
+          + "(4) to show the cost basis of the portfolio, "
+          + "(5) to go back to main menu."),
 
   STOCK_BUY_SELL("Press (1) to buy new stocks, Press (2) to sell existing stocks"),
 
@@ -75,6 +76,10 @@ public enum Options {
    */
   public void print() {
     System.out.println(this.message);
+  }
+
+  public String getString(){
+    return this.message;
   }
 
 

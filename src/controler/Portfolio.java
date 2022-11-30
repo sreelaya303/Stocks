@@ -17,8 +17,10 @@ public class Portfolio {
   private Boolean isFlexible;
   private String name;
 
+  private float fees = 0;
+
   /**
-   * This construnctor creates a new array list for stocks.
+   * This constructor creates a new array list for stocks.
    */
   public Portfolio() {
     myStocks = new ArrayList<>();
@@ -126,6 +128,14 @@ public class Portfolio {
   public void saveToDisk() {
     ReadWriteToFile fs = new ReadWriteToFile();
     fs.writeToFile(this);
+  }
+
+  public float getCommission(){
+    return this.fees;
+  }
+
+  public void setCommission(float f){
+    this.fees = f;
   }
 
 }

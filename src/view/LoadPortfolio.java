@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.time.LocalDate;
 import java.util.Scanner;
 
+import controler.CostBasis;
 import controler.ExamineComposition;
 import controler.Portfolio;
 import controler.PortfolioPriceOnDate;
@@ -154,6 +155,8 @@ public class LoadPortfolio {
           repeat = false;
           break;
         case "4":
+          CostBasis cb = new CostBasis();
+          System.out.println(cb.getCostBasis(ps));
           repeat = false;
           break;
         case "EXIT":

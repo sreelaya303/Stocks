@@ -14,6 +14,8 @@ public class Stock {
   private long stockNumber;
   private double stockPrice;
 
+  private int transactions = 1;
+
   /**
    * Setting the data source to alphaVantageApi, this can later be changed by setSource.
    * the user needs to be aware of the type of sources available.
@@ -119,5 +121,17 @@ public class Stock {
    */
   public float getStockPriceOnDate(LocalDate date) throws IOException {
     return api.getStockPrice(this.stockName, date);
+  }
+
+  public void addTrans(){
+    this.transactions += 1;
+  }
+
+  public int getTransactions(){
+    return this.transactions;
+  }
+
+  public void setTransactions(int temp){
+    this.transactions = temp;
   }
 }

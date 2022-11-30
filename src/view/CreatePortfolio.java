@@ -27,6 +27,8 @@ public class CreatePortfolio {
         break;
       case "2":
         portfolio.setFlexible(true);
+//        System.out.println("Enter commission: ");
+//        portfolio.setCommission(Float.parseFloat(myObj.next()));
         break;
       case "EXIT":
         Options.EXIT.print();
